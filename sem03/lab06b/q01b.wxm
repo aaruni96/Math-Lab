@@ -1,0 +1,19 @@
+kill(all)$
+a:-1$
+b:1$
+f(x):=1/x$
+print("Given function is f(x) = ",f(x))$
+for i:a+0.0001 step 0.05 thru b-0.0001
+do(
+	lhd[i]:limit((f(x)-f(i))/(x-i),x,i,minus),
+	rhd[i]:limit((f(x)-f(i))/(x-i),x,i,plus),
+	if rhd[i]=lhd[i] and abs(lhd[i])#inf and abs(lhd[i])#ind
+	then
+		flag:1
+	else
+		flag:0
+)$
+if flag=1 then	
+	print("f(x) is differentiable in open interval" (a,b))
+else
+	print("f(x) is not differentiable in the open interval" (a,b))$

@@ -1,0 +1,8 @@
+kill(all)$
+f(x):= if x<=2 then x+6 else x^2$
+lhl:limit(x+6,x,2,minus);
+rhl:limit(x^2,x,2,plus);
+if lhl=rhl then
+    disp("Limit exists")
+else
+    disp("Limit does not exist")$

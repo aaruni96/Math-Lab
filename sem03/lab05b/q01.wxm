@@ -1,0 +1,21 @@
+kill(all)$
+a:0$
+b:1$
+f(x):=x^2+1$
+print("Given function is f(x) = ",f(x))$
+for i:a step 0.05 thru b
+do(
+	lhl[i]:limit(f(x),x,i,minus),
+	rhl[i]:limit(f(x),x,i,plus),
+	h:ratsimp(f(x)),
+	h1[i]:ev(h,x:i),
+	if lhl[i]=rhl[i] and lhl[i]=h1[i]
+	then
+		flag:1
+	else
+		flag:0
+)$
+if flag=1 then
+	print("Given function is continuous in ", [a,b])
+else
+	print("Given function is not continuous in ", [a,b])$

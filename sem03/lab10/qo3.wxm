@@ -1,0 +1,18 @@
+kill(all)$
+expression:(-1)^i$
+u:partfrac(expression,i)$
+load("simplify_sum")$
+s:sum(u,i,1,n)$
+simp:simplify_sum(s)$
+seq:partfrac(simp,n)$
+sequence:limit(seq,n,inf)$
+print("The given series is ", expression)$
+print("The partial fraction of the series is ", u)$
+if abs(sequence)=inf
+then
+	print("By definition, the series is divergent")
+elseif abs(sequence)#ind
+then
+	print("By definition, the series is convergent")
+else
+	print("By definition, the series is oscilattory")$

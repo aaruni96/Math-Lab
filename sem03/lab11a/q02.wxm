@@ -1,0 +1,34 @@
+kill(all)$
+
+/*D'Alembert's ratio test*/
+u(n):=fact(n)/(n^n)$
+ratio:u(n+1)/u(n)$
+print("The given series is : ",u(n))$
+print("Ratio is : ", ratio)$
+D:limit(ratio, n, inf)$
+print("The limit of the series using D'Alembert's ratio test is :", D)$
+if D<1
+then
+	print("By D'Alembert's ratio test, the series is convergent")
+elseif D>1
+then
+	print("By D'Alembert's ratio test, the series is divergent")
+else
+	print("D'Alembert's ratio test fails and we use Raabe's test to verify the convergence")$
+
+/*Raabe's Test*/
+if D=1
+then(
+	R:limit(n*((u(n)/u(n+1)) - 1),n, inf),
+	print("The limit of the series using Raabe's test is", R),
+	if R>1
+	then
+		disp("By Raabe's test the series is convergent")
+	elseif R<1
+	then
+		disp("By Raabe's test the series is divergent")
+	else
+		disp("Both tests fail")
+)
+else
+	print("")$

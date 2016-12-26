@@ -1,0 +1,6 @@
+kill(all)$
+f(x):=if x#0 then x*cos(1/x) else 0$
+lhl:limit(x*cos(1/x),x,0,minus);
+rhl:limit(x*cos(1/x),x,0,plus);
+if lhl#rhl then disp("Function is not continuous") else if lhl=f(0) then disp("Function is continuous")$
+plot2d(f(x),[x,-2,2])$

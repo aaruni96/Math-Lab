@@ -1,0 +1,7 @@
+kill(all)$
+load("simplify_sum")$
+u(k):=(k^2)/factorial(k)$
+s:sum(u(k),k,1,inf)$
+print("The given series is ",s)$
+s1:simplify_sum(s)$
+print("Sum to inf of the series is :",s1)$

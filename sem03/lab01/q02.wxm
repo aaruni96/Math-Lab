@@ -1,0 +1,2 @@
+f(x):=e^sin(x);
+taylor(f(x),x,%pi,4);

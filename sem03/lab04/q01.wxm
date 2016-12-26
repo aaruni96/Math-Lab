@@ -1,0 +1,13 @@
+kill(all)$
+expr:1+1/n$
+varbl:n$
+print("The given sequence is :", expr)$
+lim : limit(expr,varbl,inf)$
+print("limit of the sequence is :", lim)$
+if abs(lim)=inf then
+	seq:"divergent"
+else if abs(lim)#ind then
+	seq:"convergent"
+else
+	seq:"oscillatory"$
+	print("The given sequence is ", seq)$

@@ -1,0 +1,8 @@
+kill(all)$
+f(x):= if x<3 then 2*x+5 else if x>3 then 3*x+2$
+lhl:limit(2*x+5,x,3,minus);
+rhl:limit(3*x+2,x,3,plus);
+if lhl=rhl then
+    disp("Limit exists")
+else
+    disp("Limit does not exist")$

@@ -1,0 +1,6 @@
+kill(all)$
+f(x):=if x<-2 then 3-x^2 else if x=-2 then 0 else 11-x^2$
+lhl:limit(3-x^2,x,-2,minus);
+rhl:limit(11-x^2,x,-2,plus);
+if lhl#rhl then disp("Function is not continuous") else if lhl=f(-2) then disp("Function is continuous")$
+plot2d(f(x),[x,-4,4])$

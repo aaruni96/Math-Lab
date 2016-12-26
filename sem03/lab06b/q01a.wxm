@@ -1,0 +1,19 @@
+kill(all)$
+a:0$
+b:%pi$
+f(x):=sin(x)$
+print("Given function is f(x) = ",f(x))$
+for i:a+%pi/100 step %pi/10 thru b-%pi/100
+do(
+	lhd[i]:limit((f(x)-f(i))/(x-i),x,i,minus),
+	rhd[i]:limit((f(x)-f(i))/(x-i),x,i,plus),
+	if lhd[i]=rhd[i] and abs(lhd[i])#inf and abs(lhd[i])#ind
+	then
+		flag:1
+	else
+		flag:0
+)$
+if flag=1 then
+	print("f(x) is differentiable in the open interval " (a,b))
+else
+	print("f(x) is not differentiable in the open interval " (a,b))$

@@ -1,0 +1,13 @@
+kill(all)$
+a:1$
+f1(x):=(1-x)$
+f2(x):=x^2+3$
+print("Given f1(x) = ",f1(x),"for x<1")$
+print("Given f2(x) = ",f2(x),"for x>=1")$
+lhd:limit(ratsimp((f1(x)-f2(a))/(x-a)),x,a,minus)$
+rhd:limit(ratsimp((f2(x)-f2(a))/(x-a)),x,a,plus)$
+if lhd=rhd
+then
+	print("The given function is differentiable at x=",a)
+else
+	print("The given function is not differentiable at x=",a)$

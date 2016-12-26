@@ -1,0 +1,66 @@
+kill(all)$
+a:2$
+b:4$
+statement:"Hence, by Rolle's theorem, there exists at least one point c in (a,b) such that f'(c)=0"$
+f(x):=x^2-6*x+8$
+df(x):=diff(f(x),x)$
+print("Given function is f(x) = ", f(x))$
+print("f'(x) = ", df(x))$
+h:ratsimp(f(x))$
+c:0$d:0$e:0$
+
+for i:a step 0.05 thru b
+do(
+	lhl[i]:limit(f(x),x,i,minus),
+	rhl[i]:limit(f(x),x,i,plus),
+	h1[i]:ev(h,x:i),
+	if lhl[i]=rhl[i] and lhl[i]=h1[i]
+	then
+		c:1
+	else
+		c:0
+)$
+if c=1
+then	
+	print("f(x) is continuous in " [a,b])
+else
+	print("Continuitiy condition fails. Hence, f(x) is not continuous in " [a,b])$
+
+for i:a+0.0001 step 0.05 thru b-0.0001
+do(
+	lhd[i]:limit((f(x)-f(i))/(x-i),x,i,minus),
+	rhd[i]:limit((f(x)-f(i))/(x-i),x,i,plus),
+	if lhd[i]=rhd[i] and abs(lhd[i])#inf and abs(lhd[i])#ind 
+	then
+		d:1
+	else
+		d:0
+)$
+if d:1
+then
+	print("f(x) is differentiable in " (a,b))
+else
+	print("f(x) is not differentiable in " (a,b))$
+
+fa:ev(h,x:a)$
+fb:ev(h,x:b)$
+if fa=fb
+then(
+	print("f(a)=f(b)"),
+	e:1
+)
+else(
+	print("f(a)#f(b)"),
+	e:0
+)$
+
+if c=1 and d=1 and e=1
+then(
+	print("f(x) satisfies Rolle's theorem"),
+	print(statement),
+	print("The required value of c is ", find_root(df(x),x,a,b))
+)
+else
+	print("One of the conditions of Rolle's Theorem fails")$
+	
+plot2d(f(x),[x,a,b])$

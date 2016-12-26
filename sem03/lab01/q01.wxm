@@ -1,0 +1,2 @@
+f(x):=log(1+x);
+taylor(f(x),x,2,4);

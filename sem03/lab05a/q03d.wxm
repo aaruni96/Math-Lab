@@ -1,0 +1,6 @@
+kill(all)$
+f(x):=sin(1/x)$
+lhl:limit(sin(1/x),x,0,minus);
+rhl:limit(sin(1/x),x,0,plus);
+if lhl#rhl then disp("Function is not continuous") else if lhl=f(3) then disp("Function is continuous")$
+plot2d(f(x),[x,-2,2])$

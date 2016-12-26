@@ -1,0 +1,6 @@
+kill(all)$
+f(x):=if x#3 then (x^2 - 9)/(x-3) else 6$
+lhl:limit((x^2 - 9)/(x-3),x,3,minus);
+rhl:limit((x^2 - 9)/(x-3),x,3,plus);
+if lhl#rhl then disp("Function is not continuous") else if lhl=f(3) then disp("Function is continuous")$
+plot2d(f(x),[x,-2,2])$

@@ -1,0 +1,19 @@
+kill(all)$
+f(x):=x-sin(x)$
+g(x):=x^3$
+expression:f(x)/g(x)$
+variable:x$
+lim:0$
+if limit(f(x),x,lim)=0 and limit(g(x),x,lim)=0 and expression=(f(x)/g(x))
+then
+	disp("The given functions are in 0/0 form")
+elseif abs(limit(f(x),x,lim))=inf and abs(limit(g(x),x,lim))=inf
+then
+	disp("The given functions ar in inf/inf form")
+elseif limit(f(x),x,lim)=0 and abs(limit(g(x),x,lim))=inf
+then
+	disp("The given functions are in 0*inf form")
+else
+	disp("Given expression is in the indeterminate form inf-inf or 0^0 or 1^inf or inf^0")$
+print("L'Hospital's rule gives")$
+limit(expression, variable, lim);
