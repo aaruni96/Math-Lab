@@ -1,0 +1,2 @@
+load(fourie)$
+totalfourier(x,x,%pi)$

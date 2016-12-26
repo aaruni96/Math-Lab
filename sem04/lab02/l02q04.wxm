@@ -1,0 +1,7 @@
+kill(all)$
+load(fourie)$
+f(x):=(1-x)$
+c:foursin(f(x),x,1)$
+c1:foursimp(c)$
+soln:fourexpand(c1,x,1,5)$
+plot2d(soln,[x,0,10])$

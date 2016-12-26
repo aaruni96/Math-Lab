@@ -1,0 +1,7 @@
+kill(all)$
+load(fourie)$
+f(x):=x$
+c:fourcos(f(x),x,%pi)$
+c1:foursimp(c)$
+soln:fourexpand(c1,x,%pi,5)$
+plot2d(soln,[x,0,10])$

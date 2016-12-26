@@ -1,0 +1,2 @@
+load(fourie)$
+totalfourier(x-x^2,x,%pi)$

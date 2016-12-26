@@ -1,0 +1,7 @@
+kill(all)$
+load(fourie)$
+f(x):=(x-1)^2$
+c:fourcos(f(x),x,1)$
+c1:foursimp(c)$
+soln:fourexpand(c1,x,1,5)$
+plot2d(soln,[x,0,10])$
