@@ -1,0 +1,26 @@
+/* homomorphism */
+
+kill(all)$
+load(functs)$
+z:{0,1,2,3}$
+r:{0,1,2,3,4,5}$
+addz(x,y):=mod(x+y,4)$
+addr(x,y):=mod(x+y,6)$
+multz(x,y):=mod(x*y,4)$
+multr(x,y):=mod(x*y,6)$
+f(x):=multr(3,x)$
+for i in z do(
+	for j in z do(
+		if f(addz(i,j)) = addr(f(i),f(j)) and f(multz(i,j)) = multr(f(i),f(j)) then
+			flag:1
+		else
+		(
+			 flag:0,
+			 break
+		)
+	)
+)$
+if flag=1 then
+	disp("Homo")
+else
+	disp("No Homo")$

@@ -1,0 +1,43 @@
+kill(all)$
+load(functs)$
+z:{0,1,2,3}$
+add(x,y):=mod(x+y,4)$
+mult(x,y):=mod(x*y,4)$
+f(x):=mult(3,x)$
+c:{}$
+for i in z do(
+	for j in z do(
+		if f(add(i,j)) = add(f(i),f(j)) and f(mult(i,j)) = mult(f(i),f(j)) then
+			flag:1
+		else
+		(
+			flag:0,
+			break),
+		if f(i)=f(j) then
+		(
+			if i=j then
+				flag1:1
+		),
+		for k in z do(
+			if subsetp(set(f(k)),union(set(f(i),f(j)))) then
+			(
+				c:union(c,set(i))
+			)),
+			if c=z then flag:1
+			else
+			(
+				flag:0,
+				break
+			)
+	)
+)$
+if flag1=1 then
+(
+    disp("Homo"),
+    if flag=1 then
+        disp("Iso")
+    else
+        disp("No Iso")
+)
+else
+    disp("No homo")$

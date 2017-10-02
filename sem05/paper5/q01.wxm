@@ -1,0 +1,141 @@
+/* Rings */
+
+kill(all)$
+load(functs)$
+z:{0,1,2,3,4};
+add(x,y):=mod(x+y,5)$
+mult(x,y):=mod(x*y,5)$
+n:length(z)$
+s1:{}$
+for i in z do
+(
+	for j in z do
+	(
+		s1:union(s1,set(add(i,j))),
+		if subsetp(s1,z) then
+			flag1:1
+		else
+		(
+			flag1:0,
+			break
+		),
+		for k in z do(
+			if add(add(i,j),k) = add(i,add(j,k)) then
+				flag2:1
+			else
+			(
+				flag2:0,
+				break
+			)
+		),
+		if add(i,j) = j and add(j,i) = j then( 
+			flag3:1)
+		else
+		(
+			flag3:0,
+			break
+		)
+	),
+        if flag3=1 then(
+            e:i,
+            return (e))
+);
+s2:{}$
+s3:{}$
+for i in z do(
+	for j in z do(
+		if add(i,j)=e and add(j,i)=e then
+			s2:union(s2,set(i)),
+		if add(i,j)=add(j,i) then
+			flag4:1
+		else
+		(
+			flag4:0,
+			break
+		),
+		s3:union(s3,set(mult(i,j))),
+		for k in z do(
+			if mult(mult(i,j),k) = mult(i,mult(j,k)) then
+			(
+				flag5:1
+			)
+			else
+			(
+				flag5:0,
+				break
+			),
+			if mult(i,add(j,k)) = add(mult(i,j),mult(i,k)) then
+				flag6:1
+			else
+			(
+				flag6:0,
+				break
+			)
+		)
+	)
+);
+
+if flag1=1 then
+(
+	disp("Closed"),
+	if flag2=1 then
+	(
+		disp("Associative"),
+		if flag3=1 then
+		(
+			disp("Identity"),
+			if setequalp(z,s2) then
+			(
+				disp("Inverse"),
+				if flag4=1 then
+				(
+					disp("Abelian"),
+					if subsetp(s3,z) then
+					(
+						disp("MClosed"),
+						if flag5=1 then
+						(
+							disp("MAssociative"),
+							if flag6=1 then
+							(
+								disp("Distributes","Ring")
+							)
+							else
+							(
+								disp("N Distributes")
+							)
+						)
+						else
+						(
+							disp("N MAssociative")
+						)
+					)
+					else
+					(
+						disp("N Mclosed")
+					)
+				)
+				else
+				(
+					disp("N Abelian")
+				)
+			)
+			else
+			(
+				disp("N Inverse")
+			)
+		)
+		else
+		(
+			disp("N Identity")
+		)
+	)
+	else
+	(
+		disp("N Associative")
+	)
+)
+else
+(
+	disp("N Closed")
+);

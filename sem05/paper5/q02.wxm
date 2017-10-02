@@ -1,0 +1,78 @@
+kill(all)$
+load(functs)$
+z:{0,1,2,3,4}$
+s:{}$
+add(x,y):=mod(x+y,5)$
+mult(x,y):=mod(x*y,5)$
+for i in z do(
+	for j in z do(
+		if mult(i,j)=mult(j,i) then
+			flag1:1
+		else
+		(
+			flag1:0,
+			break
+		),
+		if i#0 and j#0 then(
+			if flag3=0 then
+				break
+			else
+			(
+				if mult(i,j)#0 then
+					flag3:1
+				else
+					flag3:0
+			),
+			if mult(i,j)=1 then
+			(
+				s:union(s,{i})
+			)
+		)
+		
+	),
+	if i#0 then
+	(
+		if mult(1,i) = i and mult(i,1) = i then
+			flag2:1
+		else
+		(
+			flag2:0,
+			break
+		)
+	)
+);
+if flag1=1 then
+(
+	disp("Commutative ring"),
+	if flag2=1 then
+	(
+		disp("Ring is with unity"),
+		if flag3=1 then
+		(
+			disp("Zero divisors do not exist"),
+			if subsetp(s,z) then
+			(
+				disp("Multiplicative inverse exists for non zero elements","Hence, given ring is a field")
+			)
+			else
+			(
+				disp("Multiplicative inverse fails","Hence, given ring is not a field"),
+				break
+			)
+		)
+		else
+		(
+			disp("Zero divisors exist","Hence, given ring is not a field"),
+			break
+		)
+	)
+	else
+	(
+		disp("Ring is without unity","Hence, given ring is not a field"),
+		break
+	)
+)
+else
+(
+	disp("Ring is not commutative","Hence, given ring is not a field")
+);

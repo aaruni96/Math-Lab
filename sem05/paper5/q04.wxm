@@ -1,0 +1,36 @@
+/*ideals*/
+
+kill(all)$
+load(functs)$
+z:{0,3}$
+r:{0,1,2,3,4,5}$
+add(x,y):=mod(x+y,6)$
+mult(x,y):=mod(x*y,6)$
+s1:{}$
+s2:{}$
+for i in z do(
+	for j in z do(
+		s1:union(s1,set(add(i,-j))),
+		s2:union(s2,set(mult(i,j)))
+	)
+)$
+if subsetp(s1,z) and subsetp(s2,z) then
+	print(z," is a subring of ",r)
+else
+	print(z," is not a subring of ",r)$
+s1:{}$
+s2:{}$
+for i in r do(
+	for j in z do(
+		s1:union(s1,set(mult(i,j))),
+		s2:union(s2,set(mult(j,i)))
+	)
+)$
+if subsetp(s1,z) and subsetp(s2,z) then
+	disp("Ideal")
+else if subsetp(s1,z)
+	disp("Right Ideal")
+else if subsetp(s2,z)
+	disp("Left Ideal")
+else
+	disp("Not Ideal")$
