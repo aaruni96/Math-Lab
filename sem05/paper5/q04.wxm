@@ -28,9 +28,9 @@ for i in r do(
 )$
 if subsetp(s1,z) and subsetp(s2,z) then
 	disp("Ideal")
-else if subsetp(s1,z)
+else if subsetp(s1,z) then
 	disp("Right Ideal")
-else if subsetp(s2,z)
+else if subsetp(s2,z) then
 	disp("Left Ideal")
 else
 	disp("Not Ideal")$
