@@ -1,0 +1,12 @@
+kill(all)$
+load(fourie)$
+l:l$
+c:1$
+a:l/n/%pi/c*foursin(l*x-x^2,x,l)$
+foursimp(%)$
+cn:rhs(%t5)$
+d:foursin(-x,x,l)$
+foursimp(%)$
+bn:rhs(%t8)$
+h:(bn*cos(n*%pi*c*t/l) + cn*sin(n*%pi*c*t/l))*sin(n*%pi*x/l)$
+sum(h,n,1,inf);

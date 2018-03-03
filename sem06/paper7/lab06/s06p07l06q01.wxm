@@ -1,0 +1,9 @@
+kill(all)$
+load(fourie)$
+l:1$
+c:4$
+d:sin(n*%pi*x/l)*exp(-c^2*n^2*%pi^2*t/l^2)$
+f:foursin(x^2-x,x,l)$
+foursimp(%)$
+rhs(%t5)$
+sum(%,n,1,inf);
