@@ -1,0 +1,7 @@
+kill(all)$
+f(x,y,z):=[x^2+x*y,x*y,y*z]$
+a*[x1,y1,z1]+b*[x2,y2,z2]$
+if fullratsimp(f(%[1],%[2],%[3]))=fullratsimp(a*f(x1,y1,z1)+b*f(x2,y2,z2)) then
+	disp("Given mapping is a linear transform")
+else
+	disp("Given mapping is not a linear transform")$
