@@ -1,0 +1,9 @@
+kill(all)$
+v:3$
+m:matrix([1,1,0],[1,0,1],[0,1,1])$
+r:rank(m)$
+n:nullity(m)$
+if v=r+n then
+	disp("Rank-Nullity theorem is verified")
+else
+	disp("Rank-Nullity theorem fails")$
