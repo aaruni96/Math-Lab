@@ -1,0 +1,7 @@
+kill(all)$
+a:matrix([1,1,2],[-3,1,0],[1,-1,1],[1,2,3])$
+b:echelon(a)$
+if matrix([0,0,0])=row(b,4) then
+    disp("The given vectors are not linearly independent")
+else
+    disp("The given vectors are linearly independent")$

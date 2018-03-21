@@ -1,0 +1,6 @@
+kill(all)$
+matrix([1,1,-1],[2,-3,5],[-2,1,4])$
+if rank(%)=3 then
+    disp("The given vectors are linearly independent")
+else
+    disp("The given vectors are not linearly independent")$
