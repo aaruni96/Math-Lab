@@ -1,0 +1,3 @@
+kill(all)$
+eqn:p*x+q*y+p*q=z$
+subst([p=a,q=b],%);

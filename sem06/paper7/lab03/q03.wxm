@@ -1,0 +1,11 @@
+kill(all)$
+eqn:p*%e^x = q*%e^y$
+d:p+q*'diff(y,x)$
+r1:lhs(eqn)=k$
+r2:rhs(eqn)=k$
+h1:solve(r1,p)$
+h2:solve(r2,q)$
+subst(h1,d)$
+subst(h2,%)$
+ode2(%,y,x)$
+z:rhs(%)-lhs(%);

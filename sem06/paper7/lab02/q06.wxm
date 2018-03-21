@@ -1,0 +1,8 @@
+kill(all)$
+eqn:p=q*z$
+p1:'diff(z,u)$
+q1:a*p1$
+h1:subst([p=p1,q=q1],eqn)$
+solve(h1,'diff(z,u))$
+h:ode2(%[1],z,u)$
+subst(u=x+a*y,%);

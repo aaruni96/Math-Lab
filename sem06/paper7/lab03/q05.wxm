@@ -1,0 +1,3 @@
+kill(all)$
+eqn:p*x+q*y+sqrt((p*q)/(p+q))$
+subst([p=a,q=b],%);

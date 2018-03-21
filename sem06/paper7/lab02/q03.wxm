@@ -1,0 +1,6 @@
+kill(all)$
+eqn:p^2+q^2=3$
+z:a*x+b*y+c$
+h:subst([p=a,q=b],eqn)$
+solve(h,b)$
+subst(%,z);

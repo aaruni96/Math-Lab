@@ -1,0 +1,3 @@
+kill(all)$
+eqn:z=p*x+q*y+log(p*q)$
+subst([p=a,q=b],%);
