@@ -1,0 +1,10 @@
+kill(all)$
+eqn:2*d^2+5*d*d1+2*d1^2=0$
+subst([d=m,d1=1],%)$
+s:solve(%,m)$
+m1:rhs(s[1])$
+m2:rhs(s[2])$
+if m1=m2 then
+	cf:f1(y+m1*x)+x*f2(y+m2*x)
+else
+	cf:f1(y+m1*x)+f2(y+m2*x);
