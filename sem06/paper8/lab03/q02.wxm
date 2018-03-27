@@ -1,0 +1,11 @@
+kill(all)$
+w:x^3 - 3*x*y^2 + %i*(3*x^2*y - y^3)$
+w:subst(z=x+%i*y,w)$
+u:realpart(w)$
+v:imagpart(w)$
+m1:ratsimp(diff(u,x)/diff(u,y))$
+m2:ratsimp(diff(v,x)/diff(v,y))$
+if m1*m2=-1 then
+	disp("Given surfaces are orthogonal")
+else
+	disp("Given surfaces are not orthogonal")$

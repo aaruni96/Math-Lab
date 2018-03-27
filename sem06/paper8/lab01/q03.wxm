@@ -1,0 +1,8 @@
+kill(all)$
+w:x^3-3*x*y^2 + %i*(3*x^2*y-y^3)$
+u:realpart(w)$
+v:imagpart(w)$
+if ratsimp(diff(u,x))=ratsimp(diff(v,y)) and ratsimp(diff(u,y))=-ratsimp(diff(v,x)) then
+	disp("Analytic")
+else
+	disp("Not analytic")$

@@ -1,0 +1,11 @@
+kill(all)$
+w:%e^(%i*z)$
+w:subst(z=r*cos(t)+%i*r*sin(t),w)$
+u:realpart(w)$
+v:imagpart(w)$
+a:diff(u,r,2) + diff(u,r)/r + diff(u,t,2)/r^2$
+b:diff(v,r,2) + diff(v,r)/r + diff(v,t,2)/r^2$
+if ratsimp(a)=0 and ratsimp(b)=0 then
+	disp("Given function is harmonic")
+else
+	disp("Given function is not harmonic")$

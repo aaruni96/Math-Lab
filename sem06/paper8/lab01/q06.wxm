@@ -1,0 +1,9 @@
+kill(all)$
+w:sin(z)$
+w:subst(z=r*(cos(t) + %i*sin(t),w)$
+u:realpart(w)$
+v:imagpart(w)$
+if trigsimp(diff(u,r))=trigsimp(diff(v,t)/r) and trigsimp(diff(u,t)) = trigsimp(-r*diff(v,r)) then
+	disp("Analytic")
+else
+	disp("Not analytic")$

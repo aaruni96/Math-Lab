@@ -1,0 +1,7 @@
+kill(all)$
+u:2*x - x^3 + 3*x*y^2$
+u1:diff(u,x)$
+u2:diff(u,y)$
+u1-%i*u2$
+subst([x=z,y=0],%)$
+integrate(%,z);

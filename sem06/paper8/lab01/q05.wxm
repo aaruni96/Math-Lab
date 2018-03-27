@@ -1,0 +1,8 @@
+kill(all)$
+w:r^2*cos(2*t) - r*sin(t) + %i*(r^2*sin(2*t) + r*cos(t))$
+u:realpart(w)$
+v:imagpart(w)$
+if trigsimp(diff(u,r))=trigsimp(diff(v,t)/r) and trigsimp(diff(u,t)) = trigsimp(-r*diff(v,r)) then
+	disp("Analytic")
+else
+	disp("Not analytic")$

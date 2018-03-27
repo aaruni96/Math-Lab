@@ -1,0 +1,3 @@
+kill(all)$
+load("mnewton")$
+mnewton(x*sin(x)+cos(x),x,1);

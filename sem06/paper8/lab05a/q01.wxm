@@ -1,0 +1,11 @@
+kill(all)$
+ratio(a,b,c,d):=(a-b)*(c-d)/(a-d)/(c-b)$
+w(z):=(a*z+b)/(c*z+d)$
+ratio(z1,z2,z3,z4)$
+r1:fullratsimp(%)$
+ratio(w(z1),w(z2),w(z3),w(z4))$
+r2:fullratsimp(%)$
+if r1=r2 then
+	disp("Bilinear Transformations preserves the cross ratio")
+else
+	disp("Bilinear Transformation does not preserve cross ratio")$

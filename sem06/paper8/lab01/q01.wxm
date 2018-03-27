@@ -1,0 +1,8 @@
+kill(all)$
+w:%e^y*(cos(x)+%i*sin(x))$
+u:realpart(w)$
+v:imagpart(w)$
+if ratsimp(diff(u,x))=ratsimp(diff(v,y)) and ratsimp(diff(u,y))=-ratsimp(diff(v,x)) then
+	disp("Analytic")
+else
+	disp("Not analytic")$

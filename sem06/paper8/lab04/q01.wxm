@@ -1,0 +1,10 @@
+kill(all)$
+w:(cos(2*t)-%i*sin(2*t))/r^2$
+u:realpart(w)$
+v:imagpart(w)$
+a:diff(u,r,2) + diff(u,r)/r + diff(u,t,2)/r^2$
+b:diff(v,r,2) + diff(v,r)/r + diff(v,t,2)/r^2$
+if a=0 and b=0 then
+	disp("Given function is harmonic")
+else
+	disp("Given function is not harmonic")$

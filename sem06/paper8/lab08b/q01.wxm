@@ -1,0 +1,3 @@
+kill(all)$
+load("mnewton")$
+mnewton(x^3+4*x^2-10,x,1);

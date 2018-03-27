@@ -1,0 +1,7 @@
+kill(all)$
+u:x*%e^x*cos(y) - y*%e^x*sin(y)$
+u1:diff(u,x)$
+u2:diff(u,y)$
+u1-%i*u2$
+subst([x=z,y=0],%)$
+integrate(%,z);

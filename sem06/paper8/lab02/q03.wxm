@@ -1,0 +1,7 @@
+kill(all)$
+v:(x-y)/(x^2+y^2)$
+v1:diff(v,y)$
+v2:diff(v,x)$
+v1+%i*v2$
+subst([x=z,y=0],%)$
+integrate(%,z);
