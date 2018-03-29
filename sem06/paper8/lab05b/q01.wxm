@@ -1,0 +1,21 @@
+kill(all)$
+w(z):=(4*z-5)/(2-4*z);
+mz:1$
+solve(w=w(z),z)$
+a:rhs(%[1]);
+subst(w=u+%i*v,a)$
+cabs(%)$
+-num(%)^2+mz*denom(%)^2=0$
+a:fullratsimp(%)$
+coeff(%,u,0)$
+coeff(%,v,0)$
+k:lhs(%)$
+a-k$
+c:fullratsimp(%/coeff(lhs(%),v,2));
+g:coeff(lhs(c),u)$
+f:coeff(lhs(c),v)$
+fc:lhs(c)-g*u-f*v$
+if fc=(v^2+u^2) then
+    disp("Hence, BT transforms circles to circles")
+else
+    disp("BT does not transform circles to circles")$
